@@ -16,3 +16,33 @@ A containerized architecture would work well for this project, because, like mos
 
 
 ## Docker
+### After setting Dockerfile : 
+
+### Dockerfile:
+### command use to build broject:
+
+* `docker build --tag cs370-project` Here docker start execute the command and writes our image based on those commands and name our image as "cs370-project"
+
+
+### commands use to run broject : 
+
+ When you do 
+
+* `docker images` 
+
+you can see cs370-project image build seccusfully.
+
+To run image 
+
+* `docker run cs370-project`
+
+For now we are in a default prot http://localhost:3000
+
+
+### Other command 
+- `docker ps` shows the current process, and weather something run in the system 
+- `docker ps -a`shows your every thing.
+- `docker start cs370-project`start the project in the system 
+- `docker stop` stop the project
+
+
