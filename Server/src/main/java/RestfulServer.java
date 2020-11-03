@@ -22,7 +22,7 @@ public class RestfulServer {
         response.header("Access-Control-Allow-Origin", "*");
         response.status(200); //OK
 
-        return "";
+        return HttpRequestToJson(request);
     }
 
     private String HttpRequestToJson (Request request) {
