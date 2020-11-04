@@ -13,30 +13,45 @@ Nearly everyone has asked themselves the question “what should I have for dinn
 A containerized architecture would work well for this project, because, like most websites, ours will have a server, a database, and a client-side. Instead of having to configure each of these on every individual system, we can use Docker to containerize the application. Among our team, we have a Windows user, a Mac user, and a Linux user. It will be crucial to use Docker to make sure we are not running into configuration issues as we build this site, so we can avoid the ever frustrating “well, it works on my machine” problem. 
 
 ## Usage
-### TP-D2 Information
-The web server was created using Java Spark. The POST request path is: http://localhost:8080/
+For TP-D2, the POST request path is: http://localhost:8080/
 
 ## Docker
 ### After setting Dockerfile : 
+Dockerfile path:
+cs370-term-project/Server/Dockerfile
 
 ### Dockerfile:
-### Build Image:
+### command use to build & run broject:
+* To use docker command you should be inside app directory. 
 
-Build Docker image:
-* `docker build --tag cs370-project` 
+* `docker build --tag cs370-project .` Here docker start execute the command and writes our image based on those commands and name our image as "cs370-project"
+* `docker run -p 8080:8080 --name cs370 -d cs370-project` Here we connect the container to the browser with port 8080.
+* `docker run cs` runs the container.
 
-### Run Image: 
+Stop/remove the container:
+* `docker stop cs370` stops the container.
+* `docker rm cs370` remove the container.
 
-To run  our image: 
-* `docker run cs370-project`
+### Commands use with the project : 
 
-Our server runs on: http://localhost:3000
+ When you do 
 
-### Other Commands 
-- `docker images` shows a list of docker images
-- `docker ps` shows the current process, and whether something runs correctly 
+* `docker images` 
+
+you can see cs370-project image build successfully.
+
+To run image 
+
+* `docker run cs370`
+
+For now we are in a default prot http://localhost:8080
+ 
+
+### Other command 
+- `docker ps` shows the current process, and weather something run in the system 
 - `docker ps -a`shows your every thing.
 - `docker start cs370-project`start the project in the system 
 - `docker stop` stop the project
+- `curl http://localhost:8080` To check out the localhost connection.
 
 
