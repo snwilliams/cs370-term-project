@@ -18,7 +18,7 @@ For TP-D2, the POST request path is: http://localhost:8080/
 ## Docker
 ### After setting Dockerfile : 
 Dockerfile path:
-cs370-term-project/app/Dockerfile
+cs370-term-project/Server/Dockerfile
 
 ### Dockerfile:
 ### command use to build & run broject:
