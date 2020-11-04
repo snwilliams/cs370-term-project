@@ -31,9 +31,7 @@ public class RestfulServer {
     }
 
     private String HttpRequestToJson (Request request) {
-        return "{\n"
-                + "\"attributes\":\""   + request.attributes() + "\",\n"
-                + "}";
+        return "Get request successful!";
     }
 
     public static void main(String[] args) {
