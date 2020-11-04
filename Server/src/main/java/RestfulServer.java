@@ -1,8 +1,13 @@
 import spark.Spark;
 import spark.Request;
 import spark.Response;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class RestfulServer {
+
+    private static final Logger log = LoggerFactory.getLogger(RestfulServer.class);
+
     public RestfulServer() {
         this.configureRestfulApiServer();
         this.processRestfulApiRequests();
@@ -32,6 +37,14 @@ public class RestfulServer {
     }
 
     public static void main(String[] args) {
+
         RestfulServer restfulServer = new RestfulServer();
+
+        Spark.post("/", (req, res)-> {
+            log.info("Test");
+            log.info(req.body());
+            return "Hello from the server!";
+        });
+
     }
 }

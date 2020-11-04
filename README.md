@@ -13,7 +13,7 @@ Nearly everyone has asked themselves the question “what should I have for dinn
 A containerized architecture would work well for this project, because, like most websites, ours will have a server, a database, and a client-side. Instead of having to configure each of these on every individual system, we can use Docker to containerize the application. Among our team, we have a Windows user, a Mac user, and a Linux user. It will be crucial to use Docker to make sure we are not running into configuration issues as we build this site, so we can avoid the ever frustrating “well, it works on my machine” problem. 
 
 ## Usage
-
+For TP-D2, the POST request path is: http://localhost:8080/
 
 ## Docker
 ### After setting Dockerfile : 
@@ -24,7 +24,7 @@ A containerized architecture would work well for this project, because, like mos
 * `docker build --tag cs370-project` Here docker start execute the command and writes our image based on those commands and name our image as "cs370-project"
 
 
-### commands use to run broject : 
+### Commands use to run project : 
 
  When you do 
 
