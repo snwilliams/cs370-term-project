@@ -22,11 +22,9 @@ cs370-term-project/Server/Dockerfile
 
 ### Dockerfile:
 ### command use to build & run broject:
-* To use docker command you should be inside app directory. 
+* To use docker command you should be inside the Server directory
 
-* `docker build --tag cs370-project .` Here docker start execute the command and writes our image based on those commands and name our image as "cs370-project"
-* `docker run -p 8080:8080 --name cs370 -d cs370-project` Here we connect the container to the browser with port 8080.
-* `docker run cs` runs the container.
+* `docker build .' builds the image and starts the server.
 
 Stop/remove the container:
 * `docker stop cs370` stops the container.
