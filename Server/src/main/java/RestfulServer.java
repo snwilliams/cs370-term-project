@@ -1,6 +1,7 @@
 import spark.Spark;
 import spark.Request;
 import spark.Response;
+import spark.Filter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -36,9 +37,19 @@ public class RestfulServer {
                 +"\"body\":\""   + request.body() + "\",\n"+ "}";
     }
 
+    public void enableCors() {
+    Spark.before((request, response) -> {
+      response.header("Access-Control-Allow-Origin", "*");
+      response.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+      response.header("Access-Control-Allow-Headers", "Content-Type, api_key, Authorization");
+    });
+  }
+
     public static void main(String[] args) {
 
         RestfulServer restfulServer = new RestfulServer();
+        restfulServer.enableCors();
+        Spark.get("/hello", (req, res) -> "hello world");
 
         Spark.post("/", (req, res)-> {
             log.info("Test");
