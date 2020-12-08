@@ -15,20 +15,23 @@ A containerized architecture would work well for this project, because, like mos
 ## Usage
 For TP-D2, the POST request path is: http://localhost:8080/
 
+To run Server sid use `java -cp Server/target/RESTful_API-1.0-SNAPSHOT-jar-with-dependencies.jar RestfulServer`
+
 ## Docker
 ### After setting Dockerfile : 
 Dockerfile path:
-cs370-term-project/Server/Dockerfile
+cs370-term-project/Dockerfile
 
 ### Dockerfile:
 ### command use to build & run broject:
-* To use docker command you should be inside app directory. 
+* To use docker command you should be inside app directory.
 
-* `docker build --tag cs370-project .` Here docker start execute the command and writes our image based on those commands and name our image as "cs370-project"
-* `docker run -p 8080:8080 --name cs370 -d cs370-project` Here we connect the container to the browser with port 8080.
-* `docker run cs` runs the container.
+* `docker build --t cs370-project .` Here docker start execute the command and writes our image based on those commands and name our image as "cs370-project"
 
-Stop/remove the container:
+* `docker run -p 8080:8080 -it --name=cs370-project cs370-project` Here we connect the container to the browser with port 8080.
+
+Stop/remove/run the container:
+* `docker run cs370-project` runs the container.
 * `docker stop cs370` stops the container.
 * `docker rm cs370` remove the container.
 
@@ -39,12 +42,6 @@ Stop/remove the container:
 * `docker images` 
 
 you can see cs370-project image build successfully.
-
-To run image 
-
-* `docker run cs370`
-
-For now we are in a default prot http://localhost:8080
  
 
 ### Other command 

@@ -10,4 +10,3 @@ RUN mvn clean && mvn package
 
 ENTRYPOINT ["java", "-cp", "target/RESTful_API-1.0-SNAPSHOT-jar-with-dependencies.jar", "RestfulServer"]
 
-
