@@ -7,11 +7,11 @@ metadata:
         app: team39-pod
 spec:
     containers:
-        name: rest-server
-        image: projectserver:latest
+      - name: rest-server
+        image: sarawill86/cs370-project:latest
         imagePullPolicy: Always
         ports:
-            containerPort: 8080
+        - containerPort: 8080
             
 ---
 apiVersion: v1
@@ -25,7 +25,7 @@ spec:
     selector:
         app: team39-pod
     ports:
-        name: http
+      - name: http
         protocol: TCP
         targetPort: 8080
         port: 80
