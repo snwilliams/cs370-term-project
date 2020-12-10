@@ -6,18 +6,19 @@ metadata:
         labels:
                 app: team39-pod
 spec:
-        containers:
-                - name: rest-server
-                  image: sarawill86/cs370-project:latest
-                  imagePullPolicy: Always
-                  ports:
-                          - containerPort: 8080
-                - name: front-end
-                  image: sarawill86/frontend:latest
-                  command: ["npm", "start"]
-                  ports:
-                          -containerPort: 3000
-
+    containers:
+      - name: rest-server
+        image: sarawill86/cs370-project:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+      - name: frontend
+        image: sarawill86/frontend:latest
+        imagePullPolicy: Always
+        command: ["npm", "start"]
+        ports:
+        - containerPort: 3000  
+            
 ---
 apiVersion: v1
 kind: Service
