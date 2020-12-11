@@ -1,22 +1,34 @@
-import React from "react";
-import TextField from "@material-ui/core/TextField";
-import { makeStyles } from '@material-ui/core/styles';
+import React, {useRef} from "react";
 
-const useStyles = makeStyles((theme) => ({
-    root: {
-        '& .MuiTextField-root': {
-            margin: theme.spacing(2),
-            width: '50ch',
-        },
-    },
-}));
+export class IngredientForm extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {value: ''};
 
-const SearchBar = () => {
-    const classes = useStyles();
-    return(
-        <form className={classes.root} noValidate autoComplete="off">
-            <TextField id="ingredient" label="Enter Ingredient" variant={"outlined"}/>
-        </form>
-    )
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    handleChange(event) {
+        this.setState({value: event.target.value});
+    }
+
+    handleSubmit(event) {
+        //alert('A name was submitted: ' + this.state.value);
+
+        event.preventDefault();
+    }
+
+    render() {
+        return (
+            <form onSubmit={this.handleSubmit}>
+                <label>
+                    Ingredient:
+                    <input type="text" value={this.state.value} onChange={this.handleChange} />
+                </label>
+                <input type="submit" value="Submit" />
+            </form>
+        );
+    }
 }
-export default SearchBar;
+export default IngredientForm;

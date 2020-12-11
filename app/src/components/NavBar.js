@@ -18,7 +18,7 @@ const NavBar = () => {
         <div>
             <AppBar position="static" className={classes.bar}>
                 <Toolbar>
-                    <Typography variant="title">
+                    <Typography>
                         Whats For Dinner?
                     </Typography>
                 </Toolbar>
