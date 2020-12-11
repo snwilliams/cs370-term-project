@@ -13,7 +13,7 @@ const json = require('./recipes');
 
 var recipes = [];
 var ingredients = [];
-var measurements = ["cups", "cup", "ounces", "ounce", "pinches", "pinch", "tablespoons", "tablespoon", "teaspoons", "teaspoon", "pounds", "pound"];
+//var measurements = ["cups", "cup", "ounces", "ounce", "pinches", "pinch", "tablespoons", "tablespoon", "teaspoons", "teaspoon", "pounds", "pound"];
 for(var i = 0; i < json.recipes.length; i++) {
     recipes.push(json.recipes[i])
 }
@@ -63,7 +63,7 @@ class MyTable extends React.Component {
         super(props);
         this.rows = [];
         for(var i = 0; i < recipes.length; i++) {
-            var ingString = ""
+            var ingString = "";
             for(var j = 0; j < ingredients[i].length; j++) {
                 ingString += ingredients[j] + " ";
             }
@@ -108,11 +108,6 @@ class MyTable extends React.Component {
 
 
 class App extends Component {
-    constructor(props){
-        super(props);
-    }
-
-
 
     render() {
         const myStyle = {
@@ -121,7 +116,7 @@ class App extends Component {
             paddingBottom: 50,
             display: "flex",
             flexDirection: 'column',
-        }
+        };
         return (
             <div>
                 <div>
