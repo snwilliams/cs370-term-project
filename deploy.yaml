@@ -8,7 +8,7 @@ metadata:
 spec:
     containers:
       - name: rest-server
-        image: sarawill86/cs370-project:latest
+        image: sarawill86/restserver:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
